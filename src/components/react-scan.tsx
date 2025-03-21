@@ -1,14 +1,16 @@
-"use client";
-import { memo, useEffect } from "react";
-import { scan } from "react-scan";
+// path/to/ReactScanComponent
 
-export const ReactScan = memo(() => {
+"use client";
+// react-scan must be imported before react
+import { scan } from "react-scan";
+import { JSX, useEffect } from "react";
+
+export function ReactScan(): JSX.Element {
   useEffect(() => {
     scan({
       enabled: true,
     });
-  }, [[]]);
-  return null;
-});
+  }, []);
 
-ReactScan.displayName = "ReactScan";
+  return <></>;
+}

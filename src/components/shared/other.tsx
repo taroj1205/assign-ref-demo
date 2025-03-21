@@ -1,13 +1,12 @@
 "use client";
-import { memo } from "react";
 
-export const Other = memo(() => {
-  const numbers = Array.from({ length: 100 }, () =>
+export const Other = () => {
+  const numbers = Array.from({ length: 50000 }, () =>
     Math.floor(Math.random() * 100)
   );
 
   return (
-    <div className="flex flex-wrap max-w-md">
+    <div className="flex flex-wrap max-w-md max-h-[500px] overflow-y-auto">
       {numbers.map((number, index) => (
         <div key={index} className="bg-gray-200 text-black p-2 rounded-md m-1">
           {number}
@@ -15,6 +14,4 @@ export const Other = memo(() => {
       ))}
     </div>
   );
-});
-
-Other.displayName = "Other";
+};
