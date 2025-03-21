@@ -1,4 +1,4 @@
-import { AssignRefDemo } from "@/components/normal";
+import { AssignRefDemo } from "@/components/assign-ref";
 
 export default function Home() {
   return (
