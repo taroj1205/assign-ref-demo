@@ -3,11 +3,16 @@ import { Modes } from "@/types";
 import React, { memo } from "react";
 import { SegmentedControl } from "./segmented-control";
 import { Result } from "./result";
-import { Other } from "../shared/other";
+import { SlowComponent } from "../shared/slow-component";
 import Link from "next/link";
 
 export const AssignRefDemo = memo(() => {
   const [mode, setMode] = React.useState<Modes>("normal");
+  const data = {
+    data1: "data1",
+    data2: "data2",
+    data3: "data3",
+  };
   return (
     <div className="flex flex-col items-center space-y-6 p-8">
       <h1 className="text-4xl font-bold">Assign Ref Demo</h1>
@@ -19,7 +24,7 @@ export const AssignRefDemo = memo(() => {
       >
         Better version using assignRef
       </Link>
-      <Other />
+      <SlowComponent data={data} />
     </div>
   );
 });

@@ -3,7 +3,7 @@ import { Modes } from "@/types";
 import React, { memo, useCallback, useRef } from "react";
 import { SegmentedControl } from "./segmented-control";
 import { Result } from "./result";
-import { Other } from "../shared/other";
+import { SlowComponent } from "../shared/slow-component";
 import Link from "next/link";
 
 export const AssignRefDemo = memo(() => {
@@ -14,10 +14,16 @@ export const AssignRefDemo = memo(() => {
     []
   );
 
+  const data = {
+    data1: "data1",
+    data2: "data2",
+    data3: "data3",
+  };
+
   return (
     <div className="flex flex-col items-center space-y-6 p-8">
       <h1 className="text-4xl font-bold">Assign Ref Demo</h1>
-
+      <p className="text-xl">Try changing the switch options</p>
       <SegmentedControl
         onChangeMode={onChangeMode}
         onChangeModeRef={onChangeModeRef}
@@ -29,7 +35,7 @@ export const AssignRefDemo = memo(() => {
       >
         Go back
       </Link>
-      <Other />
+      <SlowComponent data={data} />
     </div>
   );
 });

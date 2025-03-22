@@ -7,8 +7,12 @@ interface ResultProps {
 
 export const Result: FC<ResultProps> = memo(({ mode }) => {
   return (
-    <div className="text-2xl font-semibold p-4 bg-gray-100 rounded-md shadow-md text-black">
-      Current mode: <span className="text-indigo-600">{mode}</span>
+    <div className="text-2xl font-semibold p-4 bg-gray-100 rounded-md shadow-md text-black w-full">
+      {mode === "easy"
+        ? "You selected the easy mode"
+        : mode === "hard"
+        ? "You selected the hard mode"
+        : "You selected the normal mode"}
     </div>
   );
 });

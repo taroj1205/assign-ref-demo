@@ -1,7 +1,17 @@
 "use client";
 
-export const Other = () => {
-  const numbers = Array.from({ length: 50000 }, () =>
+import { FC, memo } from "react";
+
+type SlowComponentProps = {
+  data: {
+    data1: string;
+    data2: string;
+    data3: string;
+  };
+};
+
+export const SlowComponent: FC<SlowComponentProps> = memo(() => {
+  const numbers = Array.from({ length: 10000 }, () =>
     Math.floor(Math.random() * 100)
   );
 
@@ -14,4 +24,6 @@ export const Other = () => {
       ))}
     </div>
   );
-};
+});
+
+SlowComponent.displayName = "SlowComponent";
