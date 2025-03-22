@@ -11,7 +11,7 @@ type SlowComponentProps = {
 };
 
 export const SlowComponent: FC<SlowComponentProps> = memo(() => {
-  const numbers = Array.from({ length: 10000 }, () =>
+  const numbers = Array.from({ length: 50000 }, () =>
     Math.floor(Math.random() * 100)
   );
 
