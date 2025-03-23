@@ -16,6 +16,7 @@ export const AssignRefDemo = memo(() => {
   return (
     <div className="flex flex-col items-center space-y-6 p-8">
       <h1 className="text-4xl font-bold">Assign Ref Demo</h1>
+      <p className="text-xl">Try changing the switch options</p>
       <SegmentedControl mode={mode} setMode={setMode} />
       <Result mode={mode} />
       <Link
